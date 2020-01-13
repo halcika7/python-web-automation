@@ -10,9 +10,10 @@ function create() {
         npm install --save-dev chai faker mocha nodemon should sinon supertest typescript
         mkdir backend
         cd backend/
-        mkdir config models seeders migrations validations middlewares routes services public
+        mkdir config models seeders migrations validations middlewares routes services public ./public/images
+        touch ./config/configs.js ./middlewares/authMiddleware.js server.js
         cd ..
-        touch server.js .gitignore .env README.md
+        touch index.js .gitignore .env README.md
         echo **/node_modules >> .gitignore
         echo **/.env >> .gitignore
         echo ./node_modules >> .gitignore
@@ -33,7 +34,7 @@ function create() {
             cd ..
             cd ..
             cd ..
-        elif [ $3 == 'angular' ]
+        elif [ $3 == "angular" ]
         then
             ng new frontend
             cd frontend/
